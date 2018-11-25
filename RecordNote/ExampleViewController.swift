@@ -75,7 +75,7 @@ public class ExampleViewController: UIViewController {
         button.frame = CGRect.init(x: (self.view.bounds.size.width - size.width) / 2.0, y: self.view.bounds.size.height - 120, width: size.width, height: 42.0)
     }
     
-    public func homePageAction() {
+    @objc public func homePageAction() {
         //        let vc = WebViewController.instanceFromStoryBoard()
         //        vc.hidesBottomBarWhenPushed = true
         //        if let navigationController = navigationController {
@@ -96,7 +96,7 @@ public class ExampleViewController: UIViewController {
     }
     
     
-    func changeTipColor(sender: Any) { // tipのテキストと色を変える
+    @objc func changeTipColor(sender: Any) { // tipのテキストと色を変える
         tip.textColor = UIColor.blue
     }
     

@@ -76,7 +76,7 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
         let v5 = ExampleViewController()
         
         v1.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"), tag: 0)
-        v2?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Find", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"), tag: 1)
+        v2.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Find", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"), tag: 1)
         v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityContentView(), title: nil, image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig"), tag: 2)
         v4.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Favor", image: UIImage(named: "favor"), selectedImage: UIImage(named: "favor_1"), tag: 3)
         v5.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Me", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"), tag: 4)
@@ -92,10 +92,10 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
         //        tabBarController.title = "Example"
         
         
-        addChildViewController(tabBarController)
+        addChild(tabBarController)
         view.addSubview(tabBarController.view)
         tabBarController.view.frame = view.frame
-        tabBarController.didMove(toParentViewController: self)
+        tabBarController.didMove(toParent: self)
         
         
     }
