@@ -11,7 +11,7 @@
 		CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */; };
 		CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A921AB3C6700401DE1 /* ViewController.swift */; };
 		CC4CD7AD21AB3C6700401DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */; };
-		CC4CD7B021AB3C6700401DE1 /* RecordNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7AE21AB3C6700401DE1 /* RecordNote.xcdatamodeld */; };
+		CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7AE21AB3C6700401DE1 /* DataModel.xcdatamodeld */; };
 		CC4CD7B221AB3C6800401DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7B121AB3C6800401DE1 /* Assets.xcassets */; };
 		CC4CD7B521AB3C6800401DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7B321AB3C6800401DE1 /* LaunchScreen.storyboard */; };
 		CC4CD7BF21AB3D4400401DE1 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4CD7BE21AB3D4400401DE1 /* pop.framework */; };
@@ -24,6 +24,8 @@
 		CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */; };
 		CC4CD7D021AB3DF200401DE1 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */; };
 		CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */; };
+		CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */; };
+		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
 		CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
+		CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +108,11 @@
 			children = (
 				CC4CD7C021AB3D7300401DE1 /* Content */,
 				CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */,
-				CC4CD7A921AB3C6700401DE1 /* ViewController.swift */,
-				CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */,
-				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
-				CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */,
-				CC4CD7B121AB3C6800401DE1 /* Assets.xcassets */,
-				CC4CD7B321AB3C6800401DE1 /* LaunchScreen.storyboard */,
+				CC4CD7D321AB4BDF00401DE1 /* Controllers */,
+				CC4CD7D421AB4BFA00401DE1 /* Views */,
+				CC4CD7D621AB4C2500401DE1 /* Supporting files */,
 				CC4CD7B621AB3C6800401DE1 /* Info.plist */,
-				CC4CD7AE21AB3C6700401DE1 /* RecordNote.xcdatamodeld */,
+				CC4CD7D521AB4C1B00401DE1 /* Data Model */,
 			);
 			path = RecordNote;
 			sourceTree = "<group>";
@@ -128,6 +129,43 @@
 				CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		CC4CD7D321AB4BDF00401DE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC4CD7A921AB3C6700401DE1 /* ViewController.swift */,
+				CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */,
+				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
+				CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */,
+				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CC4CD7D421AB4BFA00401DE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC4CD7D521AB4C1B00401DE1 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC4CD7AE21AB3C6700401DE1 /* DataModel.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		CC4CD7D621AB4C2500401DE1 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				CC4CD7B121AB3C6800401DE1 /* Assets.xcassets */,
+				CC4CD7B321AB3C6800401DE1 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +297,11 @@
 				CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */,
 				CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */,
 				CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */,
-				CC4CD7B021AB3C6700401DE1 /* RecordNote.xcdatamodeld in Sources */,
+				CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */,
+				CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */,
 				CC4CD7C821AB3D7300401DE1 /* ExampleBackgroundContentView.swift in Sources */,
 				CC4CD7CC21AB3D7300401DE1 /* ExampleHighlightableContentView.swift in Sources */,
+				CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */,
 				CC4CD7CD21AB3D7300401DE1 /* ExampleTipsContentView.swift in Sources */,
 				CC4CD7C921AB3D7300401DE1 /* ExampleBouncesContentView.swift in Sources */,
 			);
@@ -469,13 +509,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CC4CD7AE21AB3C6700401DE1 /* RecordNote.xcdatamodeld */ = {
+		CC4CD7AE21AB3C6700401DE1 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				CC4CD7AF21AB3C6700401DE1 /* RecordNote.xcdatamodel */,
 			);
 			currentVersion = CC4CD7AF21AB3C6700401DE1 /* RecordNote.xcdatamodel */;
-			path = RecordNote.xcdatamodeld;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

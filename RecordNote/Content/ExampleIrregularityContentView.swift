@@ -27,24 +27,42 @@ class ExampleIrregularityBasicContentView: ExampleBouncesContentView {
     }
 }
 
+//中央ボタンのクラス
 class ExampleIrregularityContentView: ESTabBarItemContentView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.imageView.backgroundColor = UIColor.init(red: 23/255.0, green: 149/255.0, blue: 158/255.0, alpha: 1.0)
+        //中央のRecordボタンの背景色を決める
+        self.imageView.backgroundColor = UIColor.init(red: 148/255.0, green: 14/255.0, blue: 158/255.0, alpha: 1.0)
+        
+        //縁の幅を決める
         self.imageView.layer.borderWidth = 3.0
-        self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
+        
+        //縁の色を決める。初期状態ほぼ白。
+        self.imageView.layer.borderColor = UIColor.init(white: 235.0 / 255.0, alpha: 1.0).cgColor
+        
+        //ボタンの丸さ加減
         self.imageView.layer.cornerRadius = 35
-        self.insets = UIEdgeInsets(top: -32, left: 0, bottom: 0, right: 0)
+        
+        //ボタンの位置
+        self.insets = UIEdgeInsets(top: -40, left: 0, bottom: 0, right: 0)
+        
+        
         let transform = CGAffineTransform.identity
         self.imageView.transform = transform
         self.superview?.bringSubviewToFront(self)
         
+        //テキストの色
         textColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
-        iconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
-        highlightIconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
+        
+        //アイコンの色。これを背景色と同色にすれば無地のボタンができる。
+        iconColor = UIColor.init(red: 148/255.0, green: 14/255.0, blue: 158/255.0, alpha: 1.0)
+        
+        //アイコンの色。ボタンが押された時にどんな色にするか。今回は何も変化させない。
+        highlightIconColor = UIColor.init(red: 148/255.0, green: 14/255.0, blue: 158/255.0, alpha: 1.0)
+        
         backdropColor = .clear
         highlightBackdropColor = .clear
     }
