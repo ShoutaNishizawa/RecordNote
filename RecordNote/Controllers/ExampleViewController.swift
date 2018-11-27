@@ -86,13 +86,13 @@ public class ExampleViewController: UIViewController {
     }
     
     public func backAction() {
-        if let navigationController = navigationController {
-            if navigationController.viewControllers.count > 1 {
-                navigationController.popViewController(animated: true)
-                return
-            }
-        }
-        dismiss(animated: true, completion: nil)
+//        if let navigationController = navigationController {
+//            if navigationController.viewControllers.count > 1 {
+//                navigationController.popViewController(animated: true)
+//                return
+//            }
+//        }
+//        dismiss(animated: true, completion: nil)
     }
     
     

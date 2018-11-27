@@ -8,8 +8,11 @@
 
 import UIKit
 import ESTabBarController_swift
+import FontAwesome_swift
 
 class ViewController: UIViewController, UITabBarControllerDelegate {
+    
+    var navigationTitle : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,29 +48,6 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
                 tabBarController?.present(alertController, animated: true, completion: nil)
             }
         }
-        //４つ目のかFavorボタンが押された時
-        //        tabBarController.shouldHijackHandler = {
-        //            tabbarController, viewController, index in
-        //            if index == 3 {
-        //                return true
-        //            }
-        //            return false
-        //        }
-        //
-        //        //中央のボタンが押された時の処理
-        //        tabBarController.didHijackHandler = {
-        //            [weak tabBarController] tabbarController, viewController, index in
-        //
-        //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-        //                //self.performSegue(withIdentifier: "goToTest", sender: self)
-        //                //self.tabBarController?.performSegue(withIdentifier: "testVC", sender: self)
-        //
-        //                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        //                let dstView = storyBoard.instantiateViewController(withIdentifier: "testVC")
-        //                self.tabBarController?.navigationController?.present(dstView, animated: true, completion: nil)
-        //            }
-        //        }
-        
         let v1 = ExampleViewController()
         //let v2 = storyboard?.instantiateViewController(withIdentifier: "testVC")
         let v2 = ExampleViewController()
@@ -75,27 +55,42 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
         let v4 = ExampleViewController()
         let v5 = ExampleViewController()
         
-        v1.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Home", image: UIImage(named: "more"), selectedImage: UIImage(named: "more_1"), tag: 0)
-        v2.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Find", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"), tag: 1)
-        v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityContentView(), title: "Record", image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig"), tag: 2)
-        v4.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Favor", image: UIImage(named: "favor"), selectedImage: UIImage(named: "favor_1"), tag: 3)
-        v5.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Me", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"), tag: 4)
-        print(v3.tabBarItem.tag)
+        //タブ用のアイコンを取得
+        let imageView1 = UIImageView()
+        imageView1.image = UIImage.fontAwesomeIcon(name: .pencilAlt , style: .solid, textColor: .black, size: CGSize(width: 30, height: 30))
+        
+        let imageView2 = UIImageView()
+        imageView2.image = UIImage.fontAwesomeIcon(name: .itunesNote , style: .brands, textColor: .black, size: CGSize(width: 30, height: 30))
+        
+        let imageView4 = UIImageView()
+        imageView4.image = UIImage.fontAwesomeIcon(name: .checkCircle , style: .solid, textColor: .black, size: CGSize(width: 30, height: 30))
+        
+        let imageView5 = UIImageView()
+        imageView5.image = UIImage.fontAwesomeIcon(name: .cog , style: .solid, textColor: .black, size: CGSize(width: 30, height: 30))
+        
+        //タブボタンのイニシャライズ
+        v1.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Note", image: imageView1.image, selectedImage: imageView1.image)
+        v2.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Audio", image: imageView2.image, selectedImage: imageView2.image)
+        
+        //RecordButtonをイニシャライズ
+        v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityContentView(), title: "Record", image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig"))
+        
+        v4.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "ToDo", image: imageView4.image, selectedImage: imageView4.image)
+        v5.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Setting", image: imageView5.image, selectedImage: imageView5.image)
         
         v4.changeTipColor(sender: self)
         
-        tabBarController.viewControllers = [v1, v2, v3, v4, v5] as! [UIViewController]
+        tabBarController.viewControllers = [v1, v2, v3, v4, v5]
         
+        let navigationController = ExampleNavigationController.init(rootViewController: tabBarController)
+        navigationController.title = "Example"
         
-        
-        //        let navigationController = ExampleNavigationController.init(rootViewController: tabBarController)
-        //        tabBarController.title = "Example"
-        
-        
-        addChild(tabBarController)
-        view.addSubview(tabBarController.view)
+        addChild(navigationController)
+        view.addSubview(navigationController.view)
         tabBarController.view.frame = view.frame
         tabBarController.didMove(toParent: self)
+        
+        self.navigationItem.title = navigationTitle
         
         
     }

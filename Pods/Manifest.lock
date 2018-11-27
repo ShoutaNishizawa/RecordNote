@@ -1,0 +1,24 @@
+PODS:
+  - ESTabBarController-swift (2.1)
+  - FontAwesome.swift (1.4.6)
+  - pop (1.0.12)
+
+DEPENDENCIES:
+  - ESTabBarController-swift (= 2.1)
+  - FontAwesome.swift
+  - pop
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ESTabBarController-swift
+    - FontAwesome.swift
+    - pop
+
+SPEC CHECKSUMS:
+  ESTabBarController-swift: 8b54372903c29d7d43a20d3c3c65a5c80f307c7c
+  FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+
+PODFILE CHECKSUM: 1f653a9cb70839f6ca959e5b0d873766d8c9ab8c
+
+COCOAPODS: 1.5.3

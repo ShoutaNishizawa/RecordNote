@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 
-class ItemViewController: UITableViewController {
+class ItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var itemTableView: UITableView!
     
     var itemArray = [Item]()
     var selectedCategory : Category? {
@@ -20,23 +22,28 @@ class ItemViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var itemNavigationTitle : String?
+    
+    //遷移後のタブバー画面で表示するタイトルをせtableViewCellから取得するためのえ変数
+    var selectedTitle : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
-        
+        self.navigationItem.title = itemNavigationTitle
     }
     
     //MARK: - Tableview Datasource Methods
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         
         cell.textLabel?.text = itemArray[indexPath.row].title
         
@@ -48,7 +55,7 @@ class ItemViewController: UITableViewController {
     }
     
     //MARK: - TableView Delegate Methods
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //        context.delete(itemArray[indexPath.row])
         //        itemArray.remove(at: indexPath.row)
@@ -56,15 +63,22 @@ class ItemViewController: UITableViewController {
         //itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         //saveItems()
+        selectedTitle = itemArray[indexPath.row].title
         
         performSegue(withIdentifier: "goToTab", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    //MARK: - Add New Items
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+            let viewController = segue.destination as! ViewController
+            viewController.navigationTitle = selectedTitle
+        
+    }
+    
+    //MARK: - Add New Items
+    @IBAction func addItemButton(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
         
@@ -86,7 +100,8 @@ class ItemViewController: UITableViewController {
         
         alert.addTextField { (addTextField) in
             addTextField.placeholder = "Create new item"
-            textField = addTextField    //このクロージャの中でしか使えないaddTextFieldをtextFieldに入れることで他の場所でも使えるようにする。
+            //このクロージャの中でしか使えないaddTextFieldをtextFieldに入れることで他の場所でも使えるようにする。
+            textField = addTextField
         }
         
         alert.addAction(action)
@@ -95,7 +110,7 @@ class ItemViewController: UITableViewController {
         
     }
     
-    func saveItems() {
+        func saveItems() {
         
         do {
             try context.save()
@@ -104,7 +119,7 @@ class ItemViewController: UITableViewController {
             print("Error saving context, \(error)")
         }
         
-        self.tableView.reloadData()
+        self.itemTableView.reloadData()
     }
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate : NSPredicate? = nil) {
@@ -124,10 +139,7 @@ class ItemViewController: UITableViewController {
             print("Error fetching data from context \(error)")
         }
         
-        tableView.reloadData()
     }
-    
-    
 }
 
 //MARK: - Search bar methods
