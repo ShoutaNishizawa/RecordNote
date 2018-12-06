@@ -47,9 +47,9 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = itemArray[indexPath.row].title
         
-        let item = itemArray[indexPath.row]
-        
-        cell.accessoryType = item.done ? .checkmark : .none
+//        let item = itemArray[indexPath.row]
+//
+//        cell.accessoryType = item.done ? .checkmark : .none
         
         return cell
     }
@@ -91,7 +91,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
-            newItem.done = false
+            //rnewItem.done = false
             newItem.parentCategory = self.selectedCategory
             self.itemArray.append(newItem)
             

@@ -12,6 +12,7 @@ import CoreData
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var categoryArray = [Category]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,6 +21,8 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tableViewの編集モードで複数選択を有効にする
+        //categoryTableView.allowsMultipleSelectionDuringEditing = true
         
         loadCategories()
         
@@ -66,10 +69,31 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedTitle = categoryArray[indexPath.row].name
-        
-        performSegue(withIdentifier: "goToItems", sender: self)
-        tableView.deselectRow(at: indexPath, animated: true)
+        if categoryTableView.isEditing == true {
+            //アラート表示
+            var textField = UITextField()
+            
+            let alert = UIAlertController(title: "カテゴリ名を変更", message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "保存", style: .default) { (action) in
+                
+                self.categoryArray[indexPath.row].name = textField.text
+                self.saveCategories()
+            }
+            
+            alert.addTextField { (addTextField) in
+                addTextField.placeholder = "名前"
+                textField = addTextField
+            }
+            
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            selectedTitle = categoryArray[indexPath.row].name
+            
+            performSegue(withIdentifier: "goToItems", sender: self)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,8 +104,62 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
             destinationVC.selectedCategory = categoryArray[indexPath.row]
             
         }
+    }
+    
+    //MARK: - edit methods
+    @IBAction func startEditing(_ sender: Any) {
+        isEditing = !isEditing
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        categoryTableView.setEditing(editing, animated: animated)
+        if editing {
+            // 編集開始
+            self.editButton.title = "完了"
+        } else {
+            // 編集終了
+            self.editButton.title = "編集"
+            self.deleteRows()
+        }
+    }
+    
+    private func deleteRows() {
+            guard let selectedIndexPaths = self.categoryTableView.indexPathsForSelectedRows else {
+                return
+            }
         
+            // 配列の要素削除で、indexの矛盾を防ぐため、降順にソートする
+            let sortedIndexPaths =  selectedIndexPaths.sorted { $0.row > $1.row }
+            for indexPathList in sortedIndexPaths {
+                categoryArray.remove(at: indexPathList.row) // 選択肢のindexPathから配列の要素を削除
+            }
         
+            // tableViewの行を削除
+            categoryTableView.deleteRows(at: sortedIndexPaths, with: UITableView.RowAnimation.automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //セルの並び替え
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let itemToMove = categoryArray[sourceIndexPath.row]
+        categoryArray.remove(at: sourceIndexPath.row)
+        categoryArray.insert(itemToMove, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        // 編集モードじゃない場合はreturn
+        if categoryTableView.isEditing == true {
+            if let _ = self.categoryTableView.indexPathsForSelectedRows {
+                self.editButton.title = "削除"
+            } else {
+                // 何もチェックされていないときは完了を表示
+                self.editButton.title = "完了"
+            }
+        }
     }
     
     //MARK: - Add New Categories
@@ -103,11 +181,19 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         
         alert.addTextField { (addTextField) in
             addTextField.placeholder = "Add a new category"
-            textField = addTextField    //このクロージャの中でしか使えないaddTextFieldをtextFieldに入れることで他の場所でも使えるようにする。
+            textField = addTextField
         }
         
         alert.addAction(action)
-        
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func removeCategoryButton(_ sender: UIBarButtonItem) {
+        isEditing = !isEditing
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
     }
 }

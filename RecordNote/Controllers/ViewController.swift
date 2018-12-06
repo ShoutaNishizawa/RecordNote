@@ -48,12 +48,12 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
                 tabBarController?.present(alertController, animated: true, completion: nil)
             }
         }
-        let v1 = ExampleViewController()
-        //let v2 = storyboard?.instantiateViewController(withIdentifier: "testVC")
-        let v2 = ExampleViewController()
+        
+        let v1 = storyboard?.instantiateViewController(withIdentifier: "textVC")
+        let v2 = storyboard?.instantiateViewController(withIdentifier: "audioVC")
         let v3 = ExampleViewController()
-        let v4 = ExampleViewController()
-        let v5 = ExampleViewController()
+        let v4 = storyboard?.instantiateViewController(withIdentifier: "todoVC")
+        let v5 = storyboard?.instantiateViewController(withIdentifier: "settingVC")
         
         //タブ用のアイコンを取得
         let imageView1 = UIImageView()
@@ -69,18 +69,16 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
         imageView5.image = UIImage.fontAwesomeIcon(name: .cog , style: .solid, textColor: .black, size: CGSize(width: 30, height: 30))
         
         //タブボタンのイニシャライズ
-        v1.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Note", image: imageView1.image, selectedImage: imageView1.image)
-        v2.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Audio", image: imageView2.image, selectedImage: imageView2.image)
+        v1?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Note", image: imageView1.image, selectedImage: imageView1.image)
+        v2?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Audio", image: imageView2.image, selectedImage: imageView2.image)
         
         //RecordButtonをイニシャライズ
         v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityContentView(), title: "Record", image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig"))
         
-        v4.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "ToDo", image: imageView4.image, selectedImage: imageView4.image)
-        v5.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Setting", image: imageView5.image, selectedImage: imageView5.image)
+        v4?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "ToDo", image: imageView4.image, selectedImage: imageView4.image)
+        v5?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Setting", image: imageView5.image, selectedImage: imageView5.image)
         
-        v4.changeTipColor(sender: self)
-        
-        tabBarController.viewControllers = [v1, v2, v3, v4, v5]
+        tabBarController.viewControllers = [v1, v2, v3, v4, v5] as! [UIViewController]
         
         let navigationController = ExampleNavigationController.init(rootViewController: tabBarController)
         navigationController.title = "Example"

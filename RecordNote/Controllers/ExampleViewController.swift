@@ -76,23 +76,11 @@ public class ExampleViewController: UIViewController {
     }
     
     @objc public func homePageAction() {
-        //        let vc = WebViewController.instanceFromStoryBoard()
-        //        vc.hidesBottomBarWhenPushed = true
-        //        if let navigationController = navigationController {
-        //            navigationController.pushViewController(vc, animated: true)
-        //            return
-        //        }
-        //        present(vc, animated: true, completion: nil)
+    
     }
     
     public func backAction() {
-//        if let navigationController = navigationController {
-//            if navigationController.viewControllers.count > 1 {
-//                navigationController.popViewController(animated: true)
-//                return
-//            }
-//        }
-//        dismiss(animated: true, completion: nil)
+
     }
     
     

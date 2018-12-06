@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2AE030B3D67D8D143EFCF535 /* Pods_RecordNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FE0D4A231DE424D99399D9 /* Pods_RecordNote.framework */; };
+		CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F21E21B925B100E9D9CB /* TextViewController.swift */; };
+		CC22F22121B9272000E9D9CB /* AudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22021B9272000E9D9CB /* AudioTableViewController.swift */; };
+		CC22F22321B927CF00E9D9CB /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */; };
+		CC22F22521B9286100E9D9CB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22421B9286100E9D9CB /* SettingViewController.swift */; };
 		CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */; };
 		CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A921AB3C6700401DE1 /* ViewController.swift */; };
 		CC4CD7AD21AB3C6700401DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */; };
@@ -26,13 +30,16 @@
 		CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */; };
 		CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */; };
 		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
-		CC4CD7E721AB702700401DE1 /* TestFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7E621AB702700401DE1 /* TestFontViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B20DD016D6BCE0753250BC4 /* Pods-RecordNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordNote/Pods-RecordNote.debug.xcconfig"; sourceTree = "<group>"; };
 		99275DEC40D85B49CCD70E29 /* Pods-RecordNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordNote/Pods-RecordNote.release.xcconfig"; sourceTree = "<group>"; };
 		A4FE0D4A231DE424D99399D9 /* Pods_RecordNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC22F21E21B925B100E9D9CB /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		CC22F22021B9272000E9D9CB /* AudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewController.swift; sourceTree = "<group>"; };
+		CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		CC22F22421B9286100E9D9CB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CC4CD7A421AB3C6700401DE1 /* RecordNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC4CD7A921AB3C6700401DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +60,6 @@
 		CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
 		CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		CC4CD7E621AB702700401DE1 /* TestFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFontViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +146,11 @@
 				CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */,
 				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
 				CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */,
-				CC4CD7E621AB702700401DE1 /* TestFontViewController.swift */,
 				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
+				CC22F21E21B925B100E9D9CB /* TextViewController.swift */,
+				CC22F22021B9272000E9D9CB /* AudioTableViewController.swift */,
+				CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */,
+				CC22F22421B9286100E9D9CB /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,18 +305,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4CD7D021AB3DF200401DE1 /* ExampleViewController.swift in Sources */,
-				CC4CD7E721AB702700401DE1 /* TestFontViewController.swift in Sources */,
+				CC22F22321B927CF00E9D9CB /* ToDoTableViewController.swift in Sources */,
 				CC4CD7CB21AB3D7300401DE1 /* ExampleBasicContentView.swift in Sources */,
 				CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */,
 				CC4CD7CA21AB3D7300401DE1 /* ExampleAnimateTipsContentView.swift in Sources */,
 				CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */,
 				CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */,
+				CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */,
 				CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */,
 				CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */,
 				CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */,
 				CC4CD7C821AB3D7300401DE1 /* ExampleBackgroundContentView.swift in Sources */,
 				CC4CD7CC21AB3D7300401DE1 /* ExampleHighlightableContentView.swift in Sources */,
 				CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */,
+				CC22F22121B9272000E9D9CB /* AudioTableViewController.swift in Sources */,
+				CC22F22521B9286100E9D9CB /* SettingViewController.swift in Sources */,
 				CC4CD7CD21AB3D7300401DE1 /* ExampleTipsContentView.swift in Sources */,
 				CC4CD7C921AB3D7300401DE1 /* ExampleBouncesContentView.swift in Sources */,
 			);
