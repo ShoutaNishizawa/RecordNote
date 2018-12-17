@@ -14,6 +14,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var itemTableView: UITableView!
     
     var itemArray = [Item]()
+    
     var selectedCategory : Category? {
         didSet{
             loadItems()
@@ -24,7 +25,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var itemNavigationTitle : String?
     
-    //遷移後のタブバー画面で表示するタイトルをせtableViewCellから取得するためのえ変数
+    //遷移後のタブバー画面で表示するタイトルをtableViewCellから取得するための変数
     var selectedTitle : String?
     
     override func viewDidLoad() {
@@ -47,9 +48,9 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = itemArray[indexPath.row].title
         
-//        let item = itemArray[indexPath.row]
-//
-//        cell.accessoryType = item.done ? .checkmark : .none
+        //        let item = itemArray[indexPath.row]
+        //
+        //        cell.accessoryType = item.done ? .checkmark : .none
         
         return cell
     }
@@ -71,9 +72,12 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-            let viewController = segue.destination as! ViewController
-            viewController.navigationTitle = selectedTitle
+        let destinationVC = segue.destination as! ViewController
+        destinationVC.navigationTitle = selectedTitle
+        
+        if let indexPath = itemTableView.indexPathForSelectedRow {
+            destinationVC.selectedItem = itemArray[indexPath.row]
+        }
         
     }
     
@@ -87,12 +91,20 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //What will happen once the user clicks the Add Item button on our UIAlert
             
-            
-            
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
-            //rnewItem.done = false
+            //固有の数字(アイテム追加日時)をロードする際のパスとするため、現在時刻を取得
+            let now = NSDate()
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+            
+            let dateStringPath = formatter.string(from: now as Date)
+            //現在時刻をnewItemのloadPathに入れる
+            newItem.loadPath = dateStringPath
+            //そのselectedCategoryをnewItem.parentCategoryに紐づけることで、categoryとItemを関連付ける。
             newItem.parentCategory = self.selectedCategory
+            //紐付けされたnewItemをitemArrayに追加
             self.itemArray.append(newItem)
             
             self.saveItems()
@@ -110,7 +122,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-        func saveItems() {
+    func saveItems() {
         
         do {
             try context.save()
@@ -124,7 +136,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate : NSPredicate? = nil) {
         
-        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        let categoryPredicate = NSPredicate(format: "parentCategory.loadPath MATCHES %@", selectedCategory!.loadPath!)
         
         if let addtionalPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, addtionalPredicate])
@@ -149,9 +161,9 @@ extension ItemViewController: UISearchBarDelegate {
         
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
-        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        let predicate = NSPredicate(format: "parentCategory.name CONTAINS[cd] %@", searchBar.text!)
         
-        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         loadItems(with: request, predicate: predicate)
         

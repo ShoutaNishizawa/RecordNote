@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>マイク使用のため</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Font Awesome 5 Brands-Regular-400.otf</string>

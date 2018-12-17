@@ -15,6 +15,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     var categoryArray = [Category]()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var selectedTitle : String?
@@ -62,7 +63,6 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         } catch {
             print("Error fetching data from category context \(error)")
         }
-        
     }
     
     //MARK: - TableView Delegate Methods
@@ -101,6 +101,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         destinationVC.itemNavigationTitle = selectedTitle
         
         if let indexPath = categoryTableView.indexPathForSelectedRow {
+            //選択されたセルのインデックスのcategoryArrayがselectedCategoryに代入される。
             destinationVC.selectedCategory = categoryArray[indexPath.row]
             
         }
@@ -174,6 +175,15 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
             
             let newCategory = Category(context: self.context)
             newCategory.name = textField.text!
+            //固有の数字(アイテム追加日時)をロードする際のパスとするため、現在時刻を取得
+            let now = NSDate()
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+            
+            let dateStringPath = formatter.string(from: now as Date)
+            //現在時刻をnewCategoryのloadPathに入れる
+            newCategory.loadPath = dateStringPath
             self.categoryArray.append(newCategory)
             
             self.saveCategories()

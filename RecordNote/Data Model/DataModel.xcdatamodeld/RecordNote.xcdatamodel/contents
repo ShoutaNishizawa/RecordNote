@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AudioFile" representedClassName=".AudioFile" syncable="YES" codeGenerationType="class">
+        <attribute name="filePath" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="URI" syncable="YES"/>
+        <relationship name="parentItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="audioFiles" inverseEntity="Item" syncable="YES"/>
+    </entity>
     <entity name="Category" representedClassName=".Category" syncable="YES" codeGenerationType="class">
+        <attribute name="loadPath" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="parentCategory" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES" codeGenerationType="class">
+        <attribute name="loadPath" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="audioFiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AudioFile" inverseName="parentItem" inverseEntity="AudioFile" syncable="YES"/>
         <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-47.1796875" positionY="20.5859375" width="128" height="73"/>
-        <element name="Item" positionX="158.05859375" positionY="9.609375" width="128" height="73"/>
+        <element name="AudioFile" positionX="-8130.7734375" positionY="125.93359375" width="128" height="88"/>
+        <element name="Category" positionX="-8559.04296875" positionY="115.859375" width="128" height="88"/>
+        <element name="Item" positionX="-8378.52734375" positionY="105.12890625" width="150.296875" height="103"/>
     </elements>
 </model>
