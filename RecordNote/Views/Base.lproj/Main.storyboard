@@ -21,7 +21,12 @@
                         <accessibility key="accessibilityConfiguration" label="example"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7A9-bR-lun"/>
+                    <navigationItem key="navigationItem" id="7A9-bR-lun">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="FxM-DU-29h"/>
+                            <barButtonItem systemItem="compose" id="e9J-sH-mJ1"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,16 +353,16 @@
             </objects>
             <point key="canvasLocation" x="3493.5999999999999" y="776.76161919040487"/>
         </scene>
-        <!--Audio Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Dgp-KP-NBO">
             <objects>
-                <tableViewController storyboardIdentifier="todoVC" id="51w-Jd-BPE" customClass="AudioTableViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="51w-Jd-BPE" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jo6-Vp-0bk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OyU-La-pvx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoItemCell" id="OyU-La-pvx">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OyU-La-pvx" id="fj5-kf-Jdl">
@@ -375,6 +380,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbf-Ba-DNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4290" y="1604"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gVz-KF-39a">
+            <objects>
+                <viewController storyboardIdentifier="todoVC" id="iTf-zT-wbZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UG1-y5-Lyh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-E0-s4R">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="egC-KZ-wyr" kind="embed" id="oBf-dc-0Hg"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca7-Ll-Nhv">
+                                <rect key="frame" x="294" y="582" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Zao-ce-Bo8"/>
+                                    <constraint firstAttribute="width" constant="65" id="b5e-qv-vuO"/>
+                                </constraints>
+                                <state key="normal" image="todoAddButton"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5sR-dW-58v" firstAttribute="trailing" secondItem="ca7-Ll-Nhv" secondAttribute="trailing" constant="16" id="C5o-k5-iee"/>
+                            <constraint firstItem="5sR-dW-58v" firstAttribute="bottom" secondItem="ca7-Ll-Nhv" secondAttribute="bottom" constant="20" id="QVE-0e-16b"/>
+                            <constraint firstItem="fVb-E0-s4R" firstAttribute="trailing" secondItem="5sR-dW-58v" secondAttribute="trailing" id="Y2l-5f-749"/>
+                            <constraint firstItem="fVb-E0-s4R" firstAttribute="bottom" secondItem="5sR-dW-58v" secondAttribute="bottom" id="j6h-Ya-Bxc"/>
+                            <constraint firstItem="fVb-E0-s4R" firstAttribute="top" secondItem="5sR-dW-58v" secondAttribute="top" id="pmD-YQ-i3J"/>
+                            <constraint firstItem="fVb-E0-s4R" firstAttribute="leading" secondItem="5sR-dW-58v" secondAttribute="leading" id="zko-li-azJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5sR-dW-58v"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTY-q9-QUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4196" y="2341"/>
+        </scene>
+        <!--To Do Table View Controller-->
+        <scene sceneID="cIm-Qc-Xdc">
+            <objects>
+                <viewController id="egC-KZ-wyr" customClass="ToDoTableViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wxi-f7-W8r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kwq-Vq-Xbi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fV5-aM-h2X">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fV5-aM-h2X" id="7uI-o1-etu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kwq-Vq-Xbi" firstAttribute="leading" secondItem="62j-Wv-JUQ" secondAttribute="leading" id="39L-mn-wQC"/>
+                            <constraint firstItem="Kwq-Vq-Xbi" firstAttribute="trailing" secondItem="62j-Wv-JUQ" secondAttribute="trailing" id="Fyc-Xu-7j3"/>
+                            <constraint firstItem="Kwq-Vq-Xbi" firstAttribute="top" secondItem="62j-Wv-JUQ" secondAttribute="top" id="KmM-DO-O3a"/>
+                            <constraint firstItem="Kwq-Vq-Xbi" firstAttribute="bottom" secondItem="62j-Wv-JUQ" secondAttribute="bottom" id="QEH-W2-yOp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="62j-Wv-JUQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPg-3i-qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4980" y="2341.0794602698652"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T5o-PL-ed5">
@@ -406,4 +487,7 @@
             <point key="canvasLocation" x="4980" y="1603.4482758620691"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="todoAddButton" width="104" height="104"/>
+    </resources>
 </document>

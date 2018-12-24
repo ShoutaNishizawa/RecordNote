@@ -15,10 +15,17 @@
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="audioFiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AudioFile" inverseName="parentItem" inverseEntity="AudioFile" syncable="YES"/>
         <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category" syncable="YES"/>
+        <relationship name="todoItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TodoItem" inverseName="parentItemForTodo" inverseEntity="TodoItem" syncable="YES"/>
+    </entity>
+    <entity name="TodoItem" representedClassName="TodoItem" syncable="YES" codeGenerationType="class">
+        <attribute name="done" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="parentItemForTodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="todoItems" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
         <element name="AudioFile" positionX="-8130.7734375" positionY="125.93359375" width="128" height="88"/>
         <element name="Category" positionX="-8559.04296875" positionY="115.859375" width="128" height="88"/>
-        <element name="Item" positionX="-8378.52734375" positionY="105.12890625" width="150.296875" height="103"/>
+        <element name="Item" positionX="-8378.52734375" positionY="105.12890625" width="150.296875" height="118"/>
+        <element name="TodoItem" positionX="-8151.66015625" positionY="279.59375" width="128" height="88"/>
     </elements>
 </model>

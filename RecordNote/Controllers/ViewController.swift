@@ -193,9 +193,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         }
     }
     
-//    static let sharedInstance:RecordPlay = RecordPlay()
-//    private override init() {}
-//
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
