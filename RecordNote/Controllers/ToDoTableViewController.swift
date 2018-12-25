@@ -66,7 +66,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoItemCell", for: indexPath)
         
         cell.textLabel?.text = todoItemArray[indexPath.row].title
-        print("\(todoItemArray[indexPath.row].title)")
+
         let item = todoItemArray[indexPath.row]
 
         cell.accessoryType = item.done ? .checkmark : .none
@@ -95,8 +95,6 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             newTodoItem.title = textField.text!
             newTodoItem.done = false
             newTodoItem.parentItemForTodo = self.selectedItemForToDoTableView
-            print("ContainerVIewのselectedItemは(add内)？：\(self.selectedItemForToDoTableView?.title)")
-            print("ContainerViewのparentItemForTodoは(add内)? : \(newTodoItem.parentItemForTodo?.title)")
             self.todoItemArray.append(newTodoItem)
             
             self.saveTodoItems()
@@ -111,14 +109,6 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         
         present(alert, animated: true, completion: nil)
     }
-
-    
-    @IBAction func addButtonPressed(_ sender: UIButton) {
-        
-        
-    }
-    
- 
     
     func saveTodoItems() {
         do {
@@ -128,13 +118,11 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } catch {
             print("Error saving todoItem context, \(error)")
         }
-        
-
+        self.tableView.reloadData()
     }
     
     func loadTodoItems(with request: NSFetchRequest<TodoItem> = TodoItem.fetchRequest(), predicate : NSPredicate? = nil) {
         
-        print("todoTableViewでのselectedItemForTodo、\(selectedItemForToDoTableView?.title)")
         let itemPredicate = NSPredicate(format: "parentItemForTodo.title MATCHES %@", selectedItemForToDoTableView!.title!)
 
         if let addtionalPredicate = predicate {
