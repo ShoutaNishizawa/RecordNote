@@ -28,7 +28,29 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print("selectedItemForTodo(ViewdidLoadのtodolist)は？ : \(todoItemArray[0])")
+        // ViewControllerの背景色
+        self.view.backgroundColor = UIColor.init(
+            red:0.71, green: 1.0, blue: 0.95, alpha: 1)
+        
+        // スクリーンの横縦幅
+        let screenWidth:CGFloat = self.view.frame.width
+        let screenHeight:CGFloat = self.view.frame.height
+       
+        // ボタンのインスタンス生成
+        let button = UIButton()
+        // ボタンの位置とサイズを設定
+        button.frame = CGRect(x:screenWidth/1.22, y:screenHeight/1.22,
+                              width:65, height:65)
+        
+        let image = UIImage(named: "todoAddButton")
+        
+        button.setImage(image, for: .normal)
+        //button.layer.cornerRadius = 30
+        // タップされたときのaction
+        button.addTarget(self,action: #selector(buttonTapped(sender:)),for: .touchUpInside)
+        
+        // Viewにボタンを追加
+        self.view.addSubview(button)
     }
     
     // MARK: - Table view data source
@@ -61,7 +83,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
+    @objc func buttonTapped(sender : AnyObject) {
         
         var textField = UITextField()
         
@@ -88,6 +110,12 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+    }
+
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        
+        
     }
     
  
@@ -119,7 +147,6 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             self.todoItemArray = try context.fetch(request)
             
             print("load completed and todoArray was inserted")
-            print("todoitemArray インサートできてる？：\(todoItemArray[0].title)")
     
         } catch {
             print("Error fetching data from todoItem context \(error)")

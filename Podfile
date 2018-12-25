@@ -9,4 +9,5 @@ target 'RecordNote' do
 pod "ESTabBarController-swift", '2.1'
 pod 'pop'
 pod 'FontAwesome.swift'
+pod 'MaterialComponents'
 end
