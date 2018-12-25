@@ -28,7 +28,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("selectedItemに値何か入っている？\(selectedItem?.title)")
-        loadAudioFiles()
+        //loadAudioFiles()
         
         let tabBarController : ESTabBarController = ESTabBarController()
         tabBarController.delegate = self
@@ -57,11 +57,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let v1 = storyboard?.instantiateViewController(withIdentifier: "textVC")
         let v2 = storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioViewController
         let v3 = ExampleViewController()
-        let v4 = storyboard?.instantiateViewController(withIdentifier: "todoVC")
+        let v4 = storyboard?.instantiateViewController(withIdentifier: "todoVC") as! ToDoTableViewController
         let v5 = storyboard?.instantiateViewController(withIdentifier: "settingVC")
         
         //AudioViewControllerにselectedItemの値を受け渡す
         v2.selectedItemForAudioView = selectedItem
+        //TodoTableViewControllerにselectedItemの値を渡す
+        v4.selectedItemForToDoTableView = selectedItem
         
         //タブ用のアイコンを取得
         let imageView1 = UIImageView()
@@ -83,10 +85,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         //RecordButtonをイニシャライズ
         v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityContentView(), title: "Record", image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig"))
         
-        v4?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "ToDo", image: imageView4.image, selectedImage: imageView4.image)
+        v4.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "ToDo", image: imageView4.image, selectedImage: imageView4.image)
         v5?.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Setting", image: imageView5.image, selectedImage: imageView5.image)
         
-        tabBarController.viewControllers = [v1, v2, v3, v4, v5] as! [UIViewController]
+        tabBarController.viewControllers = ([v1, v2, v3, v4, v5] as! [UIViewController])
         
         addChild(tabBarController)
         view.addSubview(tabBarController.view)
@@ -134,8 +136,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             
             audioRecorder.stop()
             isRecording = false
-            //loadAudioFiles()
-            //audioTableView.reloadData()
+            loadAudioFiles()
             print("audioFile was saved to context!")
             //            label.text = "待機中"
             //            recordButton.setTitle("RECORD", for: .normal)
@@ -160,7 +161,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         newAudioFile.url = url
         //filePathに現在時刻が入っているインスタンスと固有urlを元のaudioFileArrayに追加
         audioFileArray.append(newAudioFile)
-        print("\(newAudioFile.parentItem?.title)")
+        print("audioのselectedItemは？\(newAudioFile.parentItem?.title)")
         //contextの変更内容を保存
         saveAudioFile()
         return url!
