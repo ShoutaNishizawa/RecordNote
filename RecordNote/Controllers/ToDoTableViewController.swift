@@ -23,11 +23,12 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         // ViewControllerの背景色
         self.view.backgroundColor = UIColor.init(
             red:0.71, green: 1.0, blue: 0.95, alpha: 1)
@@ -57,7 +58,6 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("\(todoItemArray.count)")
         return todoItemArray.count
     }
     
@@ -118,7 +118,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } catch {
             print("Error saving todoItem context, \(error)")
         }
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
     }
     
     func loadTodoItems(with request: NSFetchRequest<TodoItem> = TodoItem.fetchRequest(), predicate : NSPredicate? = nil) {
@@ -134,7 +134,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         do {
             self.todoItemArray = try context.fetch(request)
             
-            print("load completed and todoArray was inserted")
+            //print("load completed and todoArray was inserted")
     
         } catch {
             print("Error fetching data from todoItem context \(error)")
