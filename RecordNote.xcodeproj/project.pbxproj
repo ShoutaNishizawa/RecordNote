@@ -10,8 +10,6 @@
 		2AE030B3D67D8D143EFCF535 /* Pods_RecordNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FE0D4A231DE424D99399D9 /* Pods_RecordNote.framework */; };
 		CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F21E21B925B100E9D9CB /* TextViewController.swift */; };
 		CC22F22321B927CF00E9D9CB /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */; };
-		CC22F22521B9286100E9D9CB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22421B9286100E9D9CB /* SettingViewController.swift */; };
-		CC22F22721B92DF500E9D9CB /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22621B92DF500E9D9CB /* AudioViewController.swift */; };
 		CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */; };
 		CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A921AB3C6700401DE1 /* ViewController.swift */; };
 		CC4CD7AD21AB3C6700401DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */; };
@@ -28,10 +26,8 @@
 		CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */; };
 		CC4CD7D021AB3DF200401DE1 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */; };
 		CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */; };
-		CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */; };
 		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
 		CCA2930B21FC7CFE0069448F /* AudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */; };
-		CCA41EED21D1AF2E0053554B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +36,6 @@
 		A4FE0D4A231DE424D99399D9 /* Pods_RecordNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F21E21B925B100E9D9CB /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
-		CC22F22421B9286100E9D9CB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		CC22F22621B92DF500E9D9CB /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		CC4CD7A421AB3C6700401DE1 /* RecordNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC4CD7A921AB3C6700401DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +54,8 @@
 		CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
 		CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
-		CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestViewController.swift; sourceTree = "<group>"; };
-		CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,14 +141,10 @@
 				CC4CD7A921AB3C6700401DE1 /* ViewController.swift */,
 				CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */,
 				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
-				CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */,
 				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
 				CC22F21E21B925B100E9D9CB /* TextViewController.swift */,
-				CC22F22621B92DF500E9D9CB /* AudioViewController.swift */,
 				CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */,
-				CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */,
 				CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */,
-				CC22F22421B9286100E9D9CB /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,18 +303,14 @@
 				CC4CD7CB21AB3D7300401DE1 /* ExampleBasicContentView.swift in Sources */,
 				CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */,
 				CC4CD7CA21AB3D7300401DE1 /* ExampleAnimateTipsContentView.swift in Sources */,
-				CC22F22721B92DF500E9D9CB /* AudioViewController.swift in Sources */,
 				CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */,
 				CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */,
 				CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */,
 				CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */,
 				CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */,
 				CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */,
-				CCA41EED21D1AF2E0053554B /* ContainerViewController.swift in Sources */,
 				CC4CD7C821AB3D7300401DE1 /* ExampleBackgroundContentView.swift in Sources */,
 				CC4CD7CC21AB3D7300401DE1 /* ExampleHighlightableContentView.swift in Sources */,
-				CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */,
-				CC22F22521B9286100E9D9CB /* SettingViewController.swift in Sources */,
 				CCA2930B21FC7CFE0069448F /* AudioTestViewController.swift in Sources */,
 				CC4CD7CD21AB3D7300401DE1 /* ExampleTipsContentView.swift in Sources */,
 				CC4CD7C921AB3D7300401DE1 /* ExampleBouncesContentView.swift in Sources */,
