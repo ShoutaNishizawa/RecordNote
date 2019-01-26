@@ -30,6 +30,7 @@
 		CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */; };
 		CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */; };
 		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
+		CCA2930B21FC7CFE0069448F /* AudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */; };
 		CCA41EED21D1AF2E0053554B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
 		CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestViewController.swift; sourceTree = "<group>"; };
 		CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
 				CC22F21E21B925B100E9D9CB /* TextViewController.swift */,
 				CC22F22621B92DF500E9D9CB /* AudioViewController.swift */,
+				CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */,
 				CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */,
 				CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */,
 				CC22F22421B9286100E9D9CB /* SettingViewController.swift */,
@@ -324,6 +327,7 @@
 				CC4CD7CC21AB3D7300401DE1 /* ExampleHighlightableContentView.swift in Sources */,
 				CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */,
 				CC22F22521B9286100E9D9CB /* SettingViewController.swift in Sources */,
+				CCA2930B21FC7CFE0069448F /* AudioTestViewController.swift in Sources */,
 				CC4CD7CD21AB3D7300401DE1 /* ExampleTipsContentView.swift in Sources */,
 				CC4CD7C921AB3D7300401DE1 /* ExampleBouncesContentView.swift in Sources */,
 			);

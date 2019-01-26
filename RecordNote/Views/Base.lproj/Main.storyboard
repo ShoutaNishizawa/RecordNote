@@ -95,12 +95,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIc-ag-Sh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3936" y="2414"/>
+            <point key="canvasLocation" x="4517" y="2387"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="5s8-1V-Igl">
             <objects>
-                <viewController storyboardIdentifier="audioVC" id="yNB-jT-F4g" customClass="AudioViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yNB-jT-F4g" customClass="AudioViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L13-5G-HmS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,6 +431,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPg-3i-qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4248" y="1603"/>
+        </scene>
+        <!--Audio Test View Controller-->
+        <scene sceneID="c5x-MB-kE7">
+            <objects>
+                <viewController storyboardIdentifier="audioVC" id="l67-XJ-nfc" customClass="AudioTestViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sBM-Zb-RsO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0PM-gL-g90"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6z-Zo-JzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564" y="2330"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T5o-PL-ed5">

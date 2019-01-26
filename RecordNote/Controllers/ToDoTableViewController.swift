@@ -134,7 +134,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         do {
             self.todoItemArray = try context.fetch(request)
             
-            print("load completed and todoArray was inserted")
+            //print("load completed and todoArray was inserted")
     
         } catch {
             print("Error fetching data from todoItem context \(error)")

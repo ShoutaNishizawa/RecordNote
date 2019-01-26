@@ -29,7 +29,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         }
     }
     //var delegate : AudioViewControllerDelegate?
-    var destinationVC : AudioViewController?
+    var destinationVC : AudioTestViewController?
 
     //selectedItemが参照された時のみloadAudioFilesが呼び出される
     
@@ -37,7 +37,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         super.viewDidLoad()
         
         
-        destinationVC = (storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioViewController)
+        destinationVC = (storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioTestViewController)
         
 
         let tabBarController : ESTabBarController = ESTabBarController()
@@ -55,23 +55,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             return false
         }
         
+        let v1 = storyboard?.instantiateViewController(withIdentifier: "textVC")
+        let v2 = storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioTestViewController
+        let v3 = ExampleViewController()
+        let v4 = storyboard?.instantiateViewController(withIdentifier: "todoVC") as! ToDoTableViewController
+        let v5 = storyboard?.instantiateViewController(withIdentifier: "settingVC")
+        
         //中央のボタンが押された時の処理
         tabBarController.didHijackHandler = {
             [weak tabBarController] tabbarController, viewController, index in
             
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 print("record button tapped! in VC")
-
+                
+                print("selected itemは？ \(self.selectedItem!)")
+                self.destinationVC?.selectedItemForAudioView = self.selectedItem
                 self.destinationVC?.record(selectedItemPath: self.selectedItem!)
                 
             }
         }
-        
-        let v1 = storyboard?.instantiateViewController(withIdentifier: "textVC")
-        let v2 = storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioViewController
-        let v3 = ExampleViewController()
-        let v4 = storyboard?.instantiateViewController(withIdentifier: "todoVC") as! ToDoTableViewController
-        let v5 = storyboard?.instantiateViewController(withIdentifier: "settingVC")
         
         //AudioViewControllerにselectedItemの値を受け渡す
         v2.selectedItemForAudioView = selectedItem
