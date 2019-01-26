@@ -13,23 +13,33 @@ import CoreData
 import ESTabBarController_swift
 import FontAwesome_swift
 
+protocol ViewControllerDelegate {
+    
+}
+
+
 class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate, UITabBarControllerDelegate {
+    
     
     var navigationTitle : String?
     
     var selectedItem : Item? {
         didSet{
-            loadAudioFiles()
+            //loadAudioFiles()
         }
     }
+    //var delegate : AudioViewControllerDelegate?
+    var destinationVC : AudioViewController?
+
     //selectedItemが参照された時のみloadAudioFilesが呼び出される
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        print("selectedItemに値何か入っている？\(selectedItem?.title)")
-        //loadAudioFiles()
         
+        
+        destinationVC = (storyboard?.instantiateViewController(withIdentifier: "audioVC") as! AudioViewController)
+        
+
         let tabBarController : ESTabBarController = ESTabBarController()
         tabBarController.delegate = self
         tabBarController.title = "Irregularity"
@@ -50,7 +60,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             [weak tabBarController] tabbarController, viewController, index in
             
             DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.record()
+                print("record button tapped! in VC")
+
+                self.destinationVC?.record(selectedItemPath: self.selectedItem!)
+                
             }
         }
         
@@ -64,6 +77,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         v2.selectedItemForAudioView = selectedItem
         //TodoTableViewControllerにselectedItemの値を渡す
         v4.selectedItemForToDoTableView = selectedItem
+        
         
         //タブ用のアイコンを取得
         let imageView1 = UIImageView()
@@ -96,103 +110,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         self.navigationItem.title = navigationTitle
         
     }
-    
-    var audioRecorder : AVAudioRecorder!
-    var isRecording : Bool = false
-    
-    var audioFileArray = [AudioFile]()
-    var url : URL?
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 
-    //オーディオ関係の処理
-    func record() {
-        
-        if !isRecording {
-            
-            let session = AVAudioSession.sharedInstance()
-            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .defaultToSpeaker)
-            try! session.setActive(true)
-            
-            let settings = [
-                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 44100,
-                AVNumberOfChannelsKey: 2,
-                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-            ]
-            
-            audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
-            audioRecorder.delegate = self
-            audioRecorder.record()
-            
-            isRecording = true
-            
-            //            label.text = "録音中"
-            //            recordButton.setTitle("STOP", for: .normal)
-            //            playButton.isEnabled = false
-            
-        }else{
-            
-            audioRecorder.stop()
-            isRecording = false
-            loadAudioFiles()
-            print("audioFile was saved to context!")
-            //            label.text = "待機中"
-            //            recordButton.setTitle("RECORD", for: .normal)
-            //            playButton.isEnabled = true
-            
-        }
-    }
-    
-    func getURL() -> URL{
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let docsDirect = paths[0]
-        //現在時刻をString型で取得
-        var now: String = "\(NSDate())"
-        //AudioFileのインスタンスを作成する。
-        let newAudioFile = AudioFile(context: self.context)
-        //作成したインスタンスのfilePathに現在時刻を代入
-        newAudioFile.filePath = now
-        //選択されたセルのitemArray[indexPath.row]をparentItemとして関連付ける
-        newAudioFile.parentItem = selectedItem
-        //グローバル変数のurlのファイルパスとしてaudioFileArrayのfilePathから参照
-        url = docsDirect.appendingPathComponent(newAudioFile.filePath!)
-        newAudioFile.url = url
-        //filePathに現在時刻が入っているインスタンスと固有urlを元のaudioFileArrayに追加
-        audioFileArray.append(newAudioFile)
-        print("audioのselectedItemは？\(newAudioFile.parentItem?.title)")
-        //contextの変更内容を保存
-        saveAudioFile()
-        return url!
-    }
-    
-    func saveAudioFile() {
-        do {
-            try context.save()
-            print("AudioFile was correctly saved!")
-            
-        } catch {
-            print("Error saving audiofile context, \(error)")
-        }
-    }
-    
-    func loadAudioFiles(with request: NSFetchRequest<AudioFile> = AudioFile.fetchRequest(), predicate : NSPredicate? = nil) {
-        
-        let itemPredicate = NSPredicate(format: "parentItem.title MATCHES %@", selectedItem!.title!)
-        
-        if let addtionalPredicate = predicate {
-            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [itemPredicate, addtionalPredicate])
-        } else {
-            request.predicate = itemPredicate
-        }
-        
-        do {
-            audioFileArray = try context.fetch(request)
-        } catch {
-            print("Error fetching data from audiofile context \(error)")
-        }
-    }
+//
+//    func loadAudioFiles(with request: NSFetchRequest<AudioFile> = AudioFile.fetchRequest(), predicate : NSPredicate? = nil) {
+//
+//        let itemPredicate = NSPredicate(format: "parentItem.title MATCHES %@", selectedItem!.title!)
+//
+//        if let addtionalPredicate = predicate {
+//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [itemPredicate, addtionalPredicate])
+//        } else {
+//            request.predicate = itemPredicate
+//        }
+//
+//        do {
+//            audioFileArray = try context.fetch(request)
+//        } catch {
+//            print("Error fetching data from audiofile context \(error)")
+//        }
+//    }
     
     
     

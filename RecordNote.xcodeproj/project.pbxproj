@@ -31,7 +31,6 @@
 		CC4CD7D821AB4C5E00401DE1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */; };
 		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
 		CCA41EED21D1AF2E0053554B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */; };
-		CCA41EEF21D2DB410053554B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA41EEE21D2DB410053554B /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		CCA41EEE21D2DB410053554B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +149,8 @@
 				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
 				CC4CD7D721AB4C5E00401DE1 /* CategoryViewController.swift */,
 				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
-				CC22F22621B92DF500E9D9CB /* AudioViewController.swift */,
-				CCA41EEE21D2DB410053554B /* TestViewController.swift */,
 				CC22F21E21B925B100E9D9CB /* TextViewController.swift */,
+				CC22F22621B92DF500E9D9CB /* AudioViewController.swift */,
 				CCA41EEC21D1AF2E0053554B /* ContainerViewController.swift */,
 				CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */,
 				CC22F22421B9286100E9D9CB /* SettingViewController.swift */,
@@ -288,12 +285,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RecordNote/Pods-RecordNote-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -302,12 +293,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +317,6 @@
 				CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */,
 				CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */,
 				CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */,
-				CCA41EEF21D2DB410053554B /* TestViewController.swift in Sources */,
 				CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */,
 				CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */,
 				CCA41EED21D1AF2E0053554B /* ContainerViewController.swift in Sources */,

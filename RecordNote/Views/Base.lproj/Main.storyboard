@@ -161,7 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="acb-Uv-oF6"/>
                     </view>
                     <connections>
-                        <outlet property="audioTableView" destination="oik-Jd-dSQ" id="KOm-GO-H6S"/>
+                        <outlet property="audioTableView" destination="oik-Jd-dSQ" id="g8b-9b-4PF"/>
                         <outlet property="label" destination="XHq-GF-5BQ" id="Ynf-ws-i8P"/>
                         <outlet property="playButton" destination="aOM-AR-wDK" id="LwW-gS-qdB"/>
                     </connections>
@@ -387,34 +387,6 @@
             </objects>
             <point key="canvasLocation" x="3493.5999999999999" y="776.76161919040487"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Dgp-KP-NBO">
-            <objects>
-                <tableViewController id="51w-Jd-BPE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jo6-Vp-0bk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoItemCell" id="OyU-La-pvx">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OyU-La-pvx" id="fj5-kf-Jdl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="51w-Jd-BPE" id="IpD-R5-MYY"/>
-                            <outlet property="delegate" destination="51w-Jd-BPE" id="dSW-0M-D7Q"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qbf-Ba-DNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4290" y="1604"/>
-        </scene>
         <!--To Do Table View Controller-->
         <scene sceneID="cIm-Qc-Xdc">
             <objects>
@@ -458,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPg-3i-qrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5137.68115942029" y="2349.7767857142858"/>
+            <point key="canvasLocation" x="4248" y="1603"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T5o-PL-ed5">
