@@ -200,7 +200,7 @@
                                 <color key="barTintColor" red="0.024511512459999999" green="0.095939741460000005" blue="0.34698207489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N7T-dU-wrj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="773"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="fii-Vi-q0i" style="IBUITableViewCellStyleDefault" id="NKS-os-vxv">
@@ -249,12 +249,11 @@
                     <connections>
                         <outlet property="categoryTableView" destination="N7T-dU-wrj" id="lv1-O5-PcE"/>
                         <outlet property="editButton" destination="F0v-FV-RDj" id="vBd-Mc-wgA"/>
-                        <segue destination="tV0-yC-e74" kind="show" identifier="goToItems" id="noG-TE-oDO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1W-BV-zaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="777"/>
+            <point key="canvasLocation" x="2664" y="-202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hDI-PE-yBN">
@@ -264,20 +263,23 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hwy-2u-nXU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.024511512459999999" green="0.095939741460000005" blue="0.34698207489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bbU-E6-9nE" kind="relationship" relationship="rootViewController" id="4UA-f9-shf"/>
+                        <segue destination="tV0-yC-e74" kind="relationship" relationship="rootViewController" id="boW-5f-eSq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iP-wy-l2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="777"/>
+            <point key="canvasLocation" x="2664" y="776"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="3eW-SJ-paX">
@@ -310,7 +312,7 @@
             </objects>
             <point key="canvasLocation" x="1908" y="1603"/>
         </scene>
-        <!--Item View Controller-->
+        <!--RecordNote-->
         <scene sceneID="5DE-cn-XlG">
             <objects>
                 <viewController id="tV0-yC-e74" customClass="ItemViewController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
@@ -336,20 +338,14 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.024511512459999999" green="0.095939741460000005" blue="0.34698207489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E2i-4j-dvM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="729"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="d8w-Zm-Lov">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ItemCell" id="WGg-oc-7gz">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WGg-oc-7gz" id="SbT-cG-9dx">
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
@@ -375,7 +371,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qvs-rS-v4q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="k78-Ci-iv5">
+                    <navigationItem key="navigationItem" title="RecordNote" id="k78-Ci-iv5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DOp-JR-pHr"/>
                         <barButtonItem key="rightBarButtonItem" title="編集" id="tij-bA-c7D"/>
                     </navigationItem>
                     <connections>
