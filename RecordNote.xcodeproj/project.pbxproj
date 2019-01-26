@@ -11,7 +11,6 @@
 		CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F21E21B925B100E9D9CB /* TextViewController.swift */; };
 		CC22F22321B927CF00E9D9CB /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */; };
 		CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */; };
-		CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7A921AB3C6700401DE1 /* ViewController.swift */; };
 		CC4CD7AD21AB3C6700401DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7AB21AB3C6700401DE1 /* Main.storyboard */; };
 		CC4CD7B021AB3C6700401DE1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7AE21AB3C6700401DE1 /* DataModel.xcdatamodeld */; };
 		CC4CD7B221AB3C6800401DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC4CD7B121AB3C6800401DE1 /* Assets.xcassets */; };
@@ -24,10 +23,9 @@
 		CC4CD7CC21AB3D7300401DE1 /* ExampleHighlightableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7C521AB3D7300401DE1 /* ExampleHighlightableContentView.swift */; };
 		CC4CD7CD21AB3D7300401DE1 /* ExampleTipsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7C621AB3D7300401DE1 /* ExampleTipsContentView.swift */; };
 		CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */; };
-		CC4CD7D021AB3DF200401DE1 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */; };
-		CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */; };
 		CC4CD7DA21AB4C9800401DE1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */; };
 		CCA2930B21FC7CFE0069448F /* AudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */; };
+		CCA2933121FCC4090069448F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2933021FCC4090069448F /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +36,6 @@
 		CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		CC4CD7A421AB3C6700401DE1 /* RecordNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4CD7A721AB3C6700401DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC4CD7A921AB3C6700401DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC4CD7AC21AB3C6700401DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC4CD7AF21AB3C6700401DE1 /* RecordNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecordNote.xcdatamodel; sourceTree = "<group>"; };
 		CC4CD7B121AB3C6800401DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,10 +49,9 @@
 		CC4CD7C521AB3D7300401DE1 /* ExampleHighlightableContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleHighlightableContentView.swift; sourceTree = "<group>"; };
 		CC4CD7C621AB3D7300401DE1 /* ExampleTipsContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTipsContentView.swift; sourceTree = "<group>"; };
 		CC4CD7C721AB3D7300401DE1 /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
-		CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
-		CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
 		CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestViewController.swift; sourceTree = "<group>"; };
+		CCA2933021FCC4090069448F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +134,8 @@
 		CC4CD7D321AB4BDF00401DE1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC4CD7A921AB3C6700401DE1 /* ViewController.swift */,
-				CC4CD7CF21AB3DF200401DE1 /* ExampleViewController.swift */,
-				CC4CD7D121AB3E1500401DE1 /* ExampleNavigationController.swift */,
 				CC4CD7D921AB4C9800401DE1 /* ItemViewController.swift */,
+				CCA2933021FCC4090069448F /* TabBarController.swift */,
 				CC22F21E21B925B100E9D9CB /* TextViewController.swift */,
 				CCA2930A21FC7CFE0069448F /* AudioTestViewController.swift */,
 				CC22F22221B927CF00E9D9CB /* ToDoTableViewController.swift */,
@@ -298,12 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC4CD7D021AB3DF200401DE1 /* ExampleViewController.swift in Sources */,
 				CC22F22321B927CF00E9D9CB /* ToDoTableViewController.swift in Sources */,
 				CC4CD7CB21AB3D7300401DE1 /* ExampleBasicContentView.swift in Sources */,
-				CC4CD7AA21AB3C6700401DE1 /* ViewController.swift in Sources */,
+				CCA2933121FCC4090069448F /* TabBarController.swift in Sources */,
 				CC4CD7CA21AB3D7300401DE1 /* ExampleAnimateTipsContentView.swift in Sources */,
-				CC4CD7D221AB3E1500401DE1 /* ExampleNavigationController.swift in Sources */,
 				CC4CD7A821AB3C6700401DE1 /* AppDelegate.swift in Sources */,
 				CC22F21F21B925B100E9D9CB /* TextViewController.swift in Sources */,
 				CC4CD7CE21AB3D7300401DE1 /* ExampleIrregularityContentView.swift in Sources */,

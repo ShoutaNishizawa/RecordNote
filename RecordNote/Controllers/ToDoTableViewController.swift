@@ -17,6 +17,8 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var selectedItemForToDoTableView : Item? {
         didSet{
             loadTodoItems()
+            print("取得された")
+            
         }
     }
     
@@ -26,9 +28,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    
+        super.viewDidLoad()    
         // ViewControllerの背景色
         self.view.backgroundColor = UIColor.init(
             red:0.71, green: 1.0, blue: 0.95, alpha: 1)
@@ -125,6 +125,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let itemPredicate = NSPredicate(format: "parentItemForTodo.title MATCHES %@", selectedItemForToDoTableView!.title!)
 
+        print("selectedITemForToDotableviewは？：\(selectedItemForToDoTableView!.title)")
         if let addtionalPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [itemPredicate, addtionalPredicate])
         } else {
@@ -134,7 +135,7 @@ class ToDoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         do {
             self.todoItemArray = try context.fetch(request)
             
-            //print("load completed and todoArray was inserted")
+            print("todoロードされた")
     
         } catch {
             print("Error fetching data from todoItem context \(error)")

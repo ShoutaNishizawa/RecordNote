@@ -10,10 +10,14 @@ import UIKit
 
 class TextViewController: UIViewController {
 
+    
+    @IBOutlet weak var myLabel: UILabel!
+    
+    var labelText: String = "初期"
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        myLabel.text = labelText
     }
     
 

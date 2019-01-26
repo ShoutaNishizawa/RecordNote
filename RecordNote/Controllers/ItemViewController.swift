@@ -52,8 +52,9 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ViewController
-        destinationVC.navigationTitle = selectedTitle
+        let destinationVC = segue.destination as! TabBarController
+
+        //destinationAudioVC.navigationItem = selectedTitle
         
         if let indexPath = itemTableView.indexPathForSelectedRow {
             destinationVC.selectedItem = itemArray[indexPath.row]
