@@ -3,7 +3,7 @@
 ## 概要と進捗状況
 
 AdobeXDで少し作ってみたプロトタイプ
-動画
+![demo](https://github.com/amaocha-first/RecordNoteApp/blob/media/RecordNoteAppDemo.gif)
 
 現在制作中のオリジナルアプリ。  
 当初は、メモアプリとボイスメモアプリとTODOアプリを一緒にして、多機能メモアプリとして考えていた。  
@@ -39,9 +39,10 @@ AdobeXDで少し作ってみたプロトタイプ
 これらを解決して簡単にメモできるようにするために、今回のアプリではフリック入力のようなUIとドラッグアンドドロップを活用しようと考えている。  
 
 参考
-画像
+![sampleImage01](https://github.com/amaocha-first/RecordNoteApp/blob/media/RecordNoteAppImage01.png)
 
-画像
+![sampleImage02](https://github.com/amaocha-first/RecordNoteApp/blob/media/RecordNoteAppImage02.png)
+
 
 また、コードは何種類もあるが、基本的にはキーを選択すれば、ダイアトニックコードが下のUIに自動で表示される。  
 その他の特別必要なコードもCustomで登録できる。
