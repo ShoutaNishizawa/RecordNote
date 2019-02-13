@@ -1,4 +1,4 @@
-//
+///
 //  AudioTestViewController.swift
 //  RecordNote
 //
@@ -19,7 +19,12 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
     var bottomSafeAreaHeight: CGFloat = 0
     //青のviewを作成
     let BlueView = UIView()
+    // ボタンのインスタンス生成
+    let button = UIButton()
+    // UIImage のインスタンスを設定
+    let buttonImage = UIImage(named:"record_button_image")!
     
+    var audioTableView: UITableView!
     var audioPlayer : AVAudioPlayer!
     var isPlaying : Bool = false
     var audioRecorder : AVAudioRecorder!
@@ -39,6 +44,36 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // スクリーンの横縦幅
+        let screenWidth:CGFloat = self.view.frame.width
+        let screenHeight:CGFloat = self.view.frame.height
+        
+        
+        
+        // ボタンの位置とサイズを設定
+        button.frame = CGRect(x:screenWidth/1.22, y:screenHeight/1.22,
+                              width:65, height:65)
+        
+        // 画像を設定
+        button.setImage(buttonImage, for: .normal)
+        
+        // タップされたときのaction
+        button.addTarget(self,
+                         action: #selector(AudioTestViewController.buttonTapped(sender:)),
+                         for: .touchUpInside)
+        
+        // Viewにボタンを追加
+        self.view.addSubview(button)
+        
+        self.view.bringSubviewToFront(button)
+        
+    }
+    
+    @objc func buttonTapped(sender : AnyObject) {
+        print("RECORDbutton tapped!")
+        
+        record(selectedItemPath: selectedItemForAudioView!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,7 +92,6 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
             self.view.addSubview(BlueView)
             self.BlueView.frame = CGRect.init(x: 0, y: topSafeAreaHeight, width: self.view.bounds.width, height: 55)
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +103,7 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCell")
             ?? UITableViewCell(style: .default, reuseIdentifier: "AudioCell")
         
-        cell.textLabel?.text = audioFileArray[indexPath.row].filePath
+        cell.textLabel?.text = "新規録音"
         
         
         return cell
@@ -85,7 +119,6 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
             
             isPlaying = true
             
-            
         }else{
             
             audioPlayer.stop()
@@ -95,9 +128,8 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func makeTableView() {
         
-        var audioTableView: UITableView!
         audioTableView = {
-            let tableView = UITableView(frame: CGRect.init(x: 0, y: 150, width: self.view.bounds.width, height: (self.view.bounds.height - BlueView.bounds.height)), style: .plain)
+            let tableView = UITableView(frame: CGRect.init(x: 0, y: 150, width: self.view.bounds.width, height: (self.view.bounds.height - BlueView.bounds.height - 150)), style: .plain)
             tableView.autoresizingMask = [
                 .flexibleWidth,
                 .flexibleHeight
@@ -107,14 +139,20 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.dataSource = self
             
             self.view.addSubview(tableView)
+            self.view.sendSubviewToBack(tableView)
+            
             print("made audio table view")
             return tableView
         }()
         loadAudioFilesFromItemVC()
         
-        audioTableView.reloadData()
+        DispatchQueue.main.async {
+            self.audioTableView.reloadData()
+        }
+        
         print("audio table view reloaded!")
     }
+    
     
     
     //オーディオ関係の処理
@@ -149,7 +187,8 @@ class AudioTestViewController: UIViewController, UITableViewDelegate, UITableVie
             isRecording = false
             saveAudioFile()
             makeTableView()
-            
+            self.view.bringSubviewToFront(self.audioTableView)
+            self.view.bringSubviewToFront(button)
         }
     }
     
