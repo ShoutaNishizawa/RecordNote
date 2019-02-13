@@ -11,13 +11,11 @@ import UIKit
 class TextViewController: UIViewController {
 
     
-    @IBOutlet weak var myLabel: UILabel!
-    
+
     var labelText: String = "初期"
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myLabel.text = labelText
     }
     ////
     

@@ -43,20 +43,64 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bnp-Bq-fgm">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.2029268954" green="0.2613694654" blue="0.36794098980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">「As usual」
+
+D♭M7 C7 Fm7 E♭m7
+D♭M7 C7 Fm7 E♭m7
+
+[A]
+身勝手なんだ希望を残して
+D♭M7             C7
+１つ言えることは君が
+            Fm7
+変わってしまったことだ
+           E♭m7
+
+それでも残った希望を背負って
+D♭7                 C7
+１つできることは僕が
+            Fm7
+今のままでいることだ
+           E♭m7
+
+[B]
+引き離して
+B♭m7    Cm7
+そこから君を救い出して
+               D♭M7
+巻き戻して
+B♭m7      Cm7
+時間に抗って
+        D♭M7
+そのままでいて
+            E♭7
+
+[サビ]
+最低なんて思わないで
+D♭M7          C7
+もういいなんて言わないで
+Fm7           E♭m7
+ずっと心が寂しいのは
+D♭M7      C7
+なんでなんだろうね
+Fm7        E♭m7
+
+最低なんて思わないで
+D♭M7          C7
+もういいなんて言わないで
+Fm7           E♭m7
+この瞬間に
+B♭m7 Cm7 D♭7
+もうすこし浸らせて
+ E♭7
+
+D♭M7 C7 Fm7 E♭m7
+D♭M7 C7 Fm7 E♭m7
+
+</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikg-kA-gEn">
-                                <rect key="frame" x="152" y="363" width="161" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -70,9 +114,6 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="fkf-7I-ce3">
                         <color key="badgeColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
-                    <connections>
-                        <outlet property="myLabel" destination="ikg-kA-gEn" id="9m3-WF-IG2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi4-u0-jpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,6 +443,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9Eh-O4-Y6B" customClass="TabBarController" customModule="RecordNote" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7o-AO-gvo">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
